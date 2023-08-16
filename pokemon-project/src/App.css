@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  );
+}
+body {
+  display: flex;
+  background: #000;
+  /* min-height: 100vh; */
+  align-items: center;
+  justify-content: center;
+}
+#parent {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+/* .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  gap: 4rem;
+  color: white;
+} */
+
+.header-container {
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 8rem;
+  color: #ddd;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.header-part-1,
+.header-part-2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+}
+
+.header-part-1 h2 {
+  right: 5%;
+  position: absolute;
+  color: white;
+}
+.header-part-1 h2:nth-child(1) {
+  /* align-self: center; */
+  color: transparent;
+  -webkit-text-stroke: 2px #ddd;
+}
+
+.header-part-1 h2:nth-child(2) {
+  color: #ddd;
+  animation: animate 4s ease-in-out infinite;
+}
+
+.header-part-2 h2 {
+  top: 50%;
+  position: absolute;
+  color: black;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+.header-part-2 h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+  position: absolute;
+  /* transform: translate(130%, -50%); */
+}
+
+.header-part-2 h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #ddd;
+}
+
+.header-part-2 h2:nth-child(2) {
+  color: #ddd;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+.all-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
+.load-more {
+  background-color: #76daff;
+  background-image: linear-gradient(315deg, #76daff 0%, #fcd000 74%);
+  border-radius: 6px;
+  border: 1px solid #c6c6c6;
+  color: #444;
+  padding: 1rem 1rem;
+  min-width: 20%;
+  margin: 3rem 0;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.load-more:hover {
+  background-color: #ff0000;
+  background-image: linear-gradient(315deg, #ff0000 0%, #ffed00 74%);
+}
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+  /* z-index: 2; */
+}
+
+.opaquescreen {
+  border: 2px solid black;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 110%;
+  z-index: 9;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* pointer-events: none; */
+  overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  /* .header-container{
+    font-size: 2rem;
+  }
+  .header-part-2 h2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+    position: absolute;
+   transform: translate(130%, -50%);
+   }*/
+  .header-part-2 h2 {
+    /* top: 20%; */
+    left: 13%;
+    position: absolute;
+    color: black;
+  }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 8rem;
+    color: #ddd;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}

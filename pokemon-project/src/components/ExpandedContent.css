@@ -1,0 +1,110 @@
+.expanded-overlay {
+  border: 2px solid black;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 20%;
+  max-height: 110%;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  box-shadow: 0 0 18px rgba(0, 0, 0.2, 0.6);
+  border-radius: 4px;
+}
+
+.expanded-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: 1.5rem;
+}
+
+.expanded-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.expanded-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.expanded-right {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.expanded-description {  
+  margin-left: 1rem;
+  margin-top: 4rem;
+}
+.expanded-right span{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.close-button {
+  color: black;
+  font-weight: bolder;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-button:focus {
+  outline: none;
+}
+
+@media screen and (max-width:480px) {
+  .expanded-overlay {
+    /* border: 2px solid black; */
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    /* z-index: 10; */
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    box-shadow: 0 0 18px rgba(0, 0, 0.2, 0.6);
+    border-radius: 4px; */
+  }
+  .expanded-left {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-left: 1.5rem;
+  }
+  
+  .expanded-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
