@@ -2,7 +2,7 @@ import styles from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
 
 const MealItem = (props) => {
-  const { name, description, price } = props.mealData;
+  const { id, name, description, price } = props.mealData;
   const roundOffPrice = `₹${price.toFixed(2)}`;
   return (
     <li className={styles.meal}>
@@ -12,7 +12,7 @@ const MealItem = (props) => {
         <div className={styles.price}>{roundOffPrice}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm idValue={id} />
       </div>
     </li>
   );
