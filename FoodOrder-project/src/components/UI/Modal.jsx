@@ -1,9 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import styles from "./Modal.module.css";
 import ReactDom from "react-dom";
+import { ToggleButtonContext } from "../../App";
 
 const Backdrop = (props) => {
-  return <div className={styles.backdrop} />;
+  const { setShowModal } = useContext(ToggleButtonContext);
+  return (
+    <div className={styles.backdrop} onClick={() => setShowModal(false)} />
+  );
 };
 
 const ModalOverlay = (props) => {
