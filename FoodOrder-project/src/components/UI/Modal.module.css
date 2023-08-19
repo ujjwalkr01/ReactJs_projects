@@ -6,18 +6,19 @@
   height: 100vh;
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.75);
+  /* overflow: hidden; */
 }
 
 .modal {
   position: fixed;
-  top: 20vh;
+  top: 15vh;
   left: 5%;
   width: 90%;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
+  z-index: 20;
   animation: slide-down 300ms ease-out forwards;
 }
 
@@ -38,3 +39,16 @@
     transform: translateY(0);
   }
 }
+
+/* Modal Content/Box */
+/* .content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+} */
+
+/* The Close Button */
