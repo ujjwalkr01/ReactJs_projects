@@ -3,6 +3,7 @@ import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Carts/Cart";
 import CartProvider from "./store/CartProvider";
+import FooterComp from "./components/Layout/FooterComp";
 
 export const ToggleButtonContext = createContext({});
 
@@ -19,6 +20,9 @@ function App() {
       </ToggleButtonContext.Provider>
       <main>
         <Meals />
+      </main>
+      <main>
+        <FooterComp />
       </main>
     </CartProvider>
   );
