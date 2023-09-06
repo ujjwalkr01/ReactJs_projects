@@ -1,0 +1,64 @@
+.btn {
+  height: 3rem;
+  width: 6rem;
+  border-radius: 60px;
+  padding: 12px;
+  background-color: orangered;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+.getAppbtn {
+  height: 3rem;
+  width: 8rem;
+  border-radius: 30px;
+  padding: 15px;
+  font-weight: 700;
+  border: none;
+  background-color: rgb(223, 222, 222);
+  cursor: pointer;
+}
+.text {
+  font-size: 15px;
+}
+.qrimg {
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
+}
+.dotBtn {
+  width: 3rem;
+  border-radius: 50%;
+  font-size: large;
+  padding: 15px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+.dotBtn:hover {
+  background-color: rgb(223, 222, 222);
+  cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .getAppbtn,
+  .dotBtn {
+    display: none;
+  }
+  .btn {
+    height: 2rem;
+    width: 4rem;
+    padding: 10px;
+    text-align: center;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width: 480px) {
+  .getAppbtn,
+  .dotBtn {
+    display: none;
+  }
+ }

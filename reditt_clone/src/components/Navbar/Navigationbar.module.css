@@ -1,0 +1,23 @@
+.parentContainer {
+  display: flex;
+  background-color: white;
+  height: 44px;
+  padding: 8px 18px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(155, 153, 153);
+}
+.logo {
+  height: 30px;
+}
+.logoText {
+  height: 46px;
+}
+@media screen and (max-width: 468px) {
+  .logoText {
+    display: none;
+  }
+  .parentContainer{
+    padding: 10px;
+  }
+}

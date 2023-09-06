@@ -1,0 +1,23 @@
+.overview-window {
+  z-index: 1000;
+  background-color: #fff;
+  border-radius: 9px;
+  width: 30rem;
+  padding: 1rem 5rem;
+  transition: all 0.5s;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4rem 6rem #00000040;
+}
+.btn_close {
+  color: rgb(250, 61, 61);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 3rem;
+  position: absolute;
+  right: 1.6rem;
+}
