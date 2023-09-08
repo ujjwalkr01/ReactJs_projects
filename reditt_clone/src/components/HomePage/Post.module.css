@@ -1,0 +1,141 @@
+.parentContainer {
+  position: relative;
+  right: 0%;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 76.5%;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.parentContainer::-webkit-scrollbar {
+  width: 10px;
+}
+.parentContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(184, 184, 185); /* color of the scroll thumb */
+  height: 250px;
+}
+.parentContainer > button:first-child {
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+.parentContainer > button:first-child:hover {
+  background-color: rgb(240, 238, 238);
+  cursor: pointer;
+}
+.listCont {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  /* border: 1px solid red; */
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.listCont:hover {
+  background-color: #f5f5f5;
+}
+hr {
+  width: 60%;
+  margin-bottom: 0.5rem;
+  border: 0.5px solid #ececec;
+}
+.channelDetails {
+  display: flex;
+  width: 100%;
+  gap: 2%;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+.channelDetails p:hover {
+  color: blue;
+}
+.contents {
+  width: 90%;
+  padding: 0.8rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+.profileImg {
+  width: 6%;
+  height: 2.3rem;
+  background-size: cover;
+  border-radius: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.like_commBtn {
+  display: flex;
+  gap: 3%;
+}
+.like_commBtn button {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 40px;
+}
+@media screen and (max-width: 480px) {
+  .parentContainer {
+    width: 100%;
+    /* height: 100%; */
+    overflow: scroll;
+    /* font-size: 10px; */
+  }
+  .listCont {
+    width: 80%;
+  }
+  hr {
+    width: 85%;
+  }
+  .profileImg {
+    width: 11%;
+    height: 2rem;
+  }
+  .contents {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 11px;
+  }
+  .channelDetails {
+    width: 100%;
+    gap: 2%;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1180px) {
+  .parentContainer {
+    width: 100%;
+  }
+  .listCont {
+    width: 90%;
+  }
+  hr {
+    width: 90%;
+  }
+  .profileImg {
+    width: 6%;
+    height: 2.5rem;
+  }
+  .contents {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 17px;
+  }
+  .channelDetails {
+    width: 100%;
+    gap: 2%;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+}

@@ -1,6 +1,6 @@
 .btn {
-  height: 3rem;
-  width: 6rem;
+  height: 2.5rem;
+  width: 5.5rem;
   border-radius: 60px;
   padding: 12px;
   background-color: orangered;
@@ -10,9 +10,10 @@
   cursor: pointer;
   font-size: 14px;
 }
+
 .getAppbtn {
-  height: 3rem;
-  width: 8rem;
+  height: 2.9rem;
+  width: 7.5rem;
   border-radius: 30px;
   padding: 15px;
   font-weight: 700;
@@ -20,22 +21,21 @@
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
-.text {
+.getAppbtn span {
   font-size: 15px;
 }
-.qrimg {
+.getAppbtn img {
   width: 15px;
   height: 15px;
   margin-right: 12px;
 }
 .dotBtn {
-  width: 3rem;
-  border-radius: 50%;
-  font-size: large;
-  padding: 15px;
-  font-weight: bold;
+  padding: 0.8rem;
+  background-color: #fff;
   border: none;
-  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 50%;
 }
 .dotBtn:hover {
   background-color: rgb(223, 222, 222);
@@ -56,9 +56,4 @@
     font-weight: bold;
   }
 }
-@media screen and (max-width: 480px) {
-  .getAppbtn,
-  .dotBtn {
-    display: none;
-  }
- }
+

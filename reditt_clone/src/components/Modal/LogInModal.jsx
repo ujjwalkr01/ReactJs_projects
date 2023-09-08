@@ -1,37 +1,63 @@
 import { Link } from "react-router-dom";
 import styles from "./LogInModal.module.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModalCtx } from "../Navbar/Buttons/LogInBtn";
+import LogInPage from "./LogInPage";
+import SignInPage from "./SignInPage";
 
 const LogInModal = (props) => {
   const { setShowModal } = useContext(ModalCtx);
-  console.log("hi i m clicked");
+  const [switchLogInSignUp, setSwitchLogInSignUp] = useState(false);
+
+  // console.log("hi i m clicked");
   const handleCloseBtn = () => {
     setShowModal(false);
   };
+
+  const handleSwitchingPage = () => {
+    setSwitchLogInSignUp((prevState) => !switchLogInSignUp);
+  };
+
   return (
     <div className={styles["overview-window"]}>
       <button className={styles["btn_close"]} onClick={handleCloseBtn}>
         &times;
       </button>
       <div className={styles.first}>
-        <h2 className={styles.heading}>Log In</h2>
+        {!switchLogInSignUp ? (
+          <h2 className={styles.heading}>Log In</h2>
+        ) : (
+          <h2 className={styles.heading}>Sign Up</h2>
+        )}
         <p className={styles.para}>
           By continuing, you are setting up a Reddit account and agree to our
-          User Agreement and Privacy Policy.
+          <Link to="/"> User Agreement</Link> and{" "}
+          <Link to="/">Privacy Policy</Link>.
         </p>
-        <button></button>
+        <button className={styles.signGoogleBtn}>
+          <img src="./images/googlelogo.png" width="20px" height="20px" />
+          <span className={styles.btnText}>Continue with Google</span>
+        </button>
+        <br />
       </div>
       <hr />
-      <div className={styles.second}>
-        <input type="email" placeholder="Username" required />
-        <br />
-        <input type="password" placeholder="Password" required />
+      {!switchLogInSignUp && <LogInPage />}
+      {switchLogInSignUp && <SignInPage />}
+      {!switchLogInSignUp ? (
         <p>
-          Forgot your <a href="">username</a> or <a href="">password</a>?
+          New to Reddit?{" "}
+          <Link to="/" onClick={handleSwitchingPage}>
+            Sign UP
+          </Link>
         </p>
-      </div>
-      <button>Log In</button>
+      ) : (
+        <p>
+          Already a redditor?{" "}
+          <Link to="/" onClick={handleSwitchingPage}>
+            Log In
+          </Link>
+        </p>
+      )}
     </div>
   );
 };

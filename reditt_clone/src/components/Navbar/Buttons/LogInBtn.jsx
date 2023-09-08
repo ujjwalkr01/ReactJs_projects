@@ -10,19 +10,15 @@ const LogInBtn = () => {
 
   const handleLogInBtn = () => {
     setShowModal(true);
-    let res=AuthApi();
+    let res = AuthApi();
     console.log(res);
   };
   return (
-    <ModalCtx.Provider value={{setShowModal}}>
+    <ModalCtx.Provider value={{ setShowModal }}>
       <button className={styles.btn} onClick={handleLogInBtn}>
         Log In
       </button>
-      {showModal && (
-        <Routes>
-          <Route path="/" element={<LogInModal />} />
-        </Routes>
-      )}
+      {showModal && <LogInModal />}
     </ModalCtx.Provider>
   );
 };
