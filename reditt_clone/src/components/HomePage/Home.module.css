@@ -2,6 +2,6 @@
   display: flex;
   width: 100%;
   /* border: 1px solid black; */
-  gap: 10%;
-  padding: 2rem;
+  gap: 2%;
+  padding: 0.5rem;
 }

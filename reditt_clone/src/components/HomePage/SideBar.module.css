@@ -1,0 +1,75 @@
+.parentContainer {
+  border: 1px solid black;
+  height: 85vh;
+  overflow-y: scroll;
+  width: 270px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border-right: 1px solid rgb(226, 226, 226);
+}
+.parentContainer ul {
+  list-style: none;
+}
+.parentContainer::-webkit-scrollbar {
+  width: 5px;
+}
+.parentContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(184, 184, 185); /* color of the scroll thumb */
+  border-radius: 20px;
+  height: 50px;
+}
+.firstSection {
+  width: 95%;
+  margin-bottom: 0.3rem;
+}
+.firstSection p {
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  padding: 0.7rem;
+  border-radius: 6px;
+}
+.firstSection p:hover,
+.secndSection li:hover,
+.thirdSection li:hover,
+.policy li:hover,
+.premium li:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+.parentContainer hr {
+  width: 95%;
+}
+.secndSection,
+.thirdSection,
+.policy,
+.premium {
+  margin-bottom: 0.3rem;
+}
+h4 {
+  margin-left: 3%;
+  margin-bottom: 0.8rem;
+}
+.secndSection li,
+.thirdSection li,
+.policy li,
+.premium li {
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  width: 86%;
+  font-size: 16px;
+  padding: 0.7rem;
+  border-radius: 6px;
+}
+.copyright {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 12px;
+}
+@media screen and (max-width: 480px) {
+  .parentContainer {
+    display: none;
+  }
+}

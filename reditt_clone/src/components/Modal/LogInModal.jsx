@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./LogInModal.module.css";
 import { useContext, useState } from "react";
-import { ModalCtx } from "../Navbar/Buttons/LogInBtn";
+import { ModalCtx } from "../../App";
 import LogInPage from "./LogInPage";
-import SignInPage from "./SignInPage";
+import SignInPage from "./SignUpPage";
 
 const LogInModal = (props) => {
   const { setShowModal } = useContext(ModalCtx);

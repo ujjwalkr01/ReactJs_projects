@@ -3,7 +3,7 @@
   right: 0%;
   height: 100vh;
   overflow-y: scroll;
-  width: 76.5%;
+  width: 73.9%;
   border: none;
   border-radius: 4px;
   padding: 1rem;
@@ -15,12 +15,26 @@
   background-color: rgb(184, 184, 185); /* color of the scroll thumb */
   height: 250px;
 }
+.createBtn {
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20200619190327/avatar_default_19_A06A42.png");
+  border-radius: 70%;
+}
 .parentContainer > button:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8%;
+  width: 10rem;
   background-color: white;
-  padding: 0.8rem;
+  padding: 0.4rem;
   border-radius: 30px;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 550;
   margin-bottom: 1rem;
 }
 .parentContainer > button:first-child:hover {
@@ -32,7 +46,6 @@
   display: flex;
   flex-direction: column;
   width: 60%;
-  /* border: 1px solid red; */
   margin-bottom: 0.8rem;
   border-radius: 10px;
   cursor: pointer;
@@ -75,12 +88,32 @@ hr {
 }
 .like_commBtn {
   display: flex;
+  align-items: center;
   gap: 3%;
 }
 .like_commBtn button {
-  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.2rem 0.4rem;
   border: none;
   border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(240, 238, 238);
+}
+.like_commBtn button p {
+  font-size: 14px;
+}
+.upvote:hover {
+  color: orangered;
+}
+.devote:hover {
+  color: blue;
+}
+.comment:hover,
+.share:hover {
+  background-color: rgb(223, 222, 222);
 }
 @media screen and (max-width: 480px) {
   .parentContainer {

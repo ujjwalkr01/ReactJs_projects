@@ -10,24 +10,20 @@
   cursor: pointer;
   font-size: 14px;
 }
-
 .getAppbtn {
-  height: 2.9rem;
-  width: 7.5rem;
+  height: 2.5rem;
+  width: 7rem;
   border-radius: 30px;
-  padding: 15px;
   font-weight: 700;
   border: none;
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
-.getAppbtn span {
-  font-size: 15px;
-}
-.getAppbtn img {
-  width: 15px;
-  height: 15px;
-  margin-right: 12px;
+.getAppbtn p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
 }
 .dotBtn {
   padding: 0.8rem;
@@ -56,4 +52,3 @@
     font-weight: bold;
   }
 }
-

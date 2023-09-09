@@ -28,7 +28,7 @@ const CommunityList = () => {
 
   return (
     <div className={styles.parentContainer}>
-      <h3>Popular Communities</h3>
+      <h4 style={{fontWeight:'500'}}>POPULAR COMMUNITIES</h4>
       <ul>
         {CommunityList.map((el) => (
           <li className={styles.listCont} key={el._id}>

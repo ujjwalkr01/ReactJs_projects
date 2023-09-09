@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import styles from "./GetAppModal.module.css";
-import { GetAppCtx } from "../Navbar/Buttons/GetAppBtn";
+import { GetAppCtx } from "../Navbar/GetAppBtn";
 
 const GetAppModal = () => {
   const { showGetAppModal, setShowGetAppModal } = useContext(GetAppCtx);

@@ -51,12 +51,14 @@
   background-color: rgb(189, 231, 248);
   cursor: pointer;
 }
-.second {
+.signUpForm,
+.logInForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  text-align: center;
 }
 .emailInp,
 .passInp,
@@ -70,7 +72,8 @@
 }
 .emailInp:hover,
 .passInp:hover,
-.userNameInp:hover,.signUpPassInp:hover {
+.userNameInp:hover,
+.signUpPassInp:hover {
   outline: solid 1px rgb(167, 167, 168);
 }
 .signUpPassInp {
@@ -87,20 +90,22 @@
   font-size: 14px;
 }
 .loginBtn {
-  /* height: 3rem; */
   width: 80%;
   border-radius: 60px;
   padding: 0.8rem;
   background-color: orangered;
   border: none;
   color: white;
-  /* font-weight: bold; */
   cursor: pointer;
   font-size: 15px;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .loginBtn:hover {
   background-color: rgb(253, 118, 68);
+}
+.errorMsg {
+  color: rgb(202, 5, 5);
+  font-size: 12px;
 }
 @media screen and (max-width: 480px) {
   .overview-window {
