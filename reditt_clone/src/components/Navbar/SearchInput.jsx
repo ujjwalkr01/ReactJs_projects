@@ -1,9 +1,13 @@
-import styles from "./SearchInput.module.css";
+import styles from "./Navigationbar.module.css";
 
 const SearchInput = () => {
   return (
-    <div className={styles.container}>
-      <input className={styles.noSubmit} type="search" placeholder="Search Reddit" />
+    <div className={styles.searchContainer}>
+      <input
+        className={styles.noSubmit}
+        type="search"
+        placeholder="Search Reddit"
+      />
     </div>
   );
 };

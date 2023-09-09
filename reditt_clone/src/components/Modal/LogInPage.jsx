@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import axios from "axios";
 import { CheckLogInStat, ModalCtx } from "../../App";
+import { ResetPassWordCtx } from "./LogInModal";
 
 const LogInPage = () => {
   const [userInfo, setUserInfo] = useState({
@@ -16,6 +17,7 @@ const LogInPage = () => {
 
   const { setIsNotLoggedIn } = useContext(CheckLogInStat);
   const { setShowModal } = useContext(ModalCtx);
+  const { setIsClickedResetPass } = useContext(ResetPassWordCtx);
 
   const handleUserInput = (event) => {
     const { name, value } = event.target;
@@ -52,6 +54,10 @@ const LogInPage = () => {
     event.preventDefault();
     fetchLogInData(userInfo);
   };
+
+  const handleResetpassword = () => {
+    setIsClickedResetPass(true);
+  };
   return (
     <form className={styles.logInForm} onSubmit={handleLogInSubmit}>
       <input
@@ -72,7 +78,14 @@ const LogInPage = () => {
         onChange={handleUserInput}
       />
       <p className={styles.reset}>
-        Forgot your <Link to="/">username</Link> or <Link to="/">password</Link>
+        Forgot your{" "}
+        <Link to="/" onClick={handleResetpassword}>
+          username
+        </Link>{" "}
+        or{" "}
+        <Link to="/" onClick={handleResetpassword}>
+          password
+        </Link>
         ?
       </p>
       {hasError && <p className={styles.errorMsg}>{errMessage}!</p>}

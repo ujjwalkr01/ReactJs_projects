@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { getHeaderWithProjectId } from "../../utils/config";
 import styles from "./CommunityList.module.css";
@@ -13,9 +13,7 @@ const CommunityList = () => {
         "https://academics.newtonschool.co/api/v1/reddit/channel",
         config
       );
-      // console.log("res", res.data.data);
       const communityData = res.data.data;
-      // console.log(communityData[0].name, communityData[0]._id);
       setCommunityList(communityData);
     } catch (err) {
       console.error(err.message);
@@ -28,7 +26,7 @@ const CommunityList = () => {
 
   return (
     <div className={styles.parentContainer}>
-      <h4 style={{fontWeight:'500'}}>POPULAR COMMUNITIES</h4>
+      <h4 style={{ fontWeight: "500" }}>POPULAR COMMUNITIES</h4>
       <ul>
         {CommunityList.map((el) => (
           <li className={styles.listCont} key={el._id}>
@@ -48,4 +46,4 @@ const CommunityList = () => {
     </div>
   );
 };
-export default CommunityList;
+export default React.memo(CommunityList);

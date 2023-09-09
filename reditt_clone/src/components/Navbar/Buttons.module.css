@@ -25,21 +25,55 @@
   justify-content: center;
   gap: 5%;
 }
-.dotBtn {
+.setting {
   padding: 0.8rem;
   background-color: #fff;
   border: none;
-  font-size: large;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 50%;
 }
-.dotBtn:hover {
+.modal {
+  width: 15rem;
+  background-color: rgb(248, 249, 250);
+  font-size: 18px;
+  font-weight: 400px;
+  height: 8rem;
+  position: absolute;
+  /* margin-top: 1.2rem; */
+  margin-right: 1rem;
+  top: 9.5%;
+  right: 10px;
+  z-index: 1000;
+  padding: 0.8rem;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.modal ul {
+  list-style: none;
+}
+.modal li {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.6rem;
+  margin-bottom: 0.2rem;
+  border-radius: 8px;
+}
+.modal li:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+.setting:hover {
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
 @media screen and (max-width: 480px) {
   .getAppbtn,
-  .dotBtn {
+  .setting,
+  .modal {
     display: none;
   }
   .btn {
@@ -50,5 +84,19 @@
     border-radius: 40px;
     font-size: 12px;
     font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1180px) {
+  .modal {
+    width: 13.5rem;
+    font-size: 14px;
+    position: absolute;
+    margin-right: 0.2rem;
+    top: 5.1%;
+    padding: 0.6rem;
+  }
+  .getAppbtn {
+    display: none;
   }
 }

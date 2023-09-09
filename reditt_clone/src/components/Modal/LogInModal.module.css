@@ -107,6 +107,15 @@
   color: rgb(202, 5, 5);
   font-size: 12px;
 }
+.resetSwitch {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 480px) {
   .overview-window {
     width: 50%;
