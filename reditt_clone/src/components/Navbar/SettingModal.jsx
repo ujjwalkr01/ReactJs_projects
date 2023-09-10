@@ -11,7 +11,7 @@ const SettingModal = () => {
   const { setShowModal } = useContext(ModalCtx);
   useEffect(() => {
     const hideModal = (e) => {
-      // console.log("e.target", e.target);
+      console.log("e.target", e.target);
       if (profileIconRef.current.contains(e.target)) {
         return;
       }

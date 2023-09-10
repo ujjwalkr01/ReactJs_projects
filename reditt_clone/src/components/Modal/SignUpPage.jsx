@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./LogInModal.module.css";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
+import { CheckLogInStat } from "../../App";
 
 const SignUpPage = () => {
   const [userInfo, setUserInfo] = useState({
@@ -11,6 +12,7 @@ const SignUpPage = () => {
   });
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
+  const { setIsNotLoggedIn } = useContext(CheckLogInStat);
   const handleUserInput = (event) => {
     const { name, value } = event.target;
     setUserInfo({ ...userInfo, [name]: value });
@@ -30,6 +32,7 @@ const SignUpPage = () => {
       console.log(res);
       if (res.data.token) {
         sethasError(false);
+        setIsNotLoggedIn(false);
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
       }

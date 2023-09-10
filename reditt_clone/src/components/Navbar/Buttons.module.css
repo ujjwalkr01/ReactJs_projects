@@ -70,6 +70,7 @@
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
+
 @media screen and (max-width: 480px) {
   .getAppbtn,
   .setting,

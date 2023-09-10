@@ -7,21 +7,29 @@ import LogInModal from "./components/Modal/LogInModal";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
-
+export const ThemeTogglerCtx = createContext();
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [isNotLoggedIn, setIsNotLoggedIn] = useState(true);
+  const [toggleTheme, setToggleTheme] = useState(false);
+  if (toggleTheme) {
+    document.body.style = "background: rgb(44, 44, 44); color:#fff;";
+  } else {
+    document.body.style = "";
+  }
   const isLoggedIn = sessionStorage.getItem("logInStatus");
   return (
-    <div>
-      <CheckLogInStat.Provider value={{ setIsNotLoggedIn }}>
+    // <div>
+    <ThemeTogglerCtx.Provider value={{ toggleTheme, setToggleTheme }}>
+      <CheckLogInStat.Provider value={{ setIsNotLoggedIn, isLoggedIn }}>
         <ModalCtx.Provider value={{ setShowModal }}>
           <Navigatonbar />
           {isNotLoggedIn && !isLoggedIn && <Home />}
           {showModal && !isLoggedIn && <LogInModal />}
         </ModalCtx.Provider>
       </CheckLogInStat.Provider>
-    </div>
+    </ThemeTogglerCtx.Provider>
+    // {/* </div> */}
   );
 }
 

@@ -34,14 +34,14 @@ const LogInPage = () => {
         userInfo,
         headerconfigs
       );
-      console.log(res);
+      console.log(res.data.data.name);
       if (res.data.token) {
         sethasError(false);
         setIsNotLoggedIn(false);
         setShowModal(false);
         sessionStorage.setItem("logInStatus", true);
         sessionStorage.setItem("authToken", res.data.token);
-        // sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
+        sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
       }
     } catch (err) {
       sethasError(true);
