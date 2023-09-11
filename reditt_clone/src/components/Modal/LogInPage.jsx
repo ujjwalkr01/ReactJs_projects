@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import styles from "./LogInModal.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import axios from "axios";
 import { CheckLogInStat, ModalCtx } from "../../App";
@@ -14,6 +14,7 @@ const LogInPage = () => {
 
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
+  const navigate = useNavigate();
 
   const { setIsNotLoggedIn } = useContext(CheckLogInStat);
   const { setShowModal } = useContext(ModalCtx);
@@ -39,6 +40,7 @@ const LogInPage = () => {
         sethasError(false);
         setIsNotLoggedIn(false);
         setShowModal(false);
+        navigate("/user/home=true");
         sessionStorage.setItem("logInStatus", true);
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));

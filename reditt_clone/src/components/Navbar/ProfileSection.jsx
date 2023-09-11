@@ -7,15 +7,30 @@ import { TfiEye } from "react-icons/tfi";
 import { ImBullhorn } from "react-icons/im";
 import { FcVip } from "react-icons/fc";
 import { RiDraftLine, RiScales3Line } from "react-icons/ri";
-import { ThemeTogglerCtx } from "../../App";
+import { CheckLogInStat, ThemeTogglerCtx } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const ProfileSection = () => {
   const [showProfileModal, setShowProfileModal] = useState(false);
-  const userName = JSON.parse(sessionStorage.getItem("userInfo"));
+
   const { toggleTheme } = useContext(ThemeTogglerCtx);
+  const { setIsNotLoggedIn } = useContext(CheckLogInStat);
+  const { setToggleTheme } = useContext(ThemeTogglerCtx);
+
+  const navigate = useNavigate();
+
+  const userName = JSON.parse(sessionStorage.getItem("userInfo"));
 
   const handleOnProfileClick = () => {
     setShowProfileModal((prevState) => !prevState);
+  };
+
+  const handleLogOut = () => {
+    setIsNotLoggedIn(true);
+    setToggleTheme(false);
+    sessionStorage.removeItem("logInStatus");
+    sessionStorage.removeItem("userInfo");
+    sessionStorage.removeItem("authToken");
   };
 
   return (
@@ -51,7 +66,13 @@ const ProfileSection = () => {
               <p>Online Status</p>
               <ToggleSwitch />
             </li>
-            <li>Profile</li>
+            <li
+              onClick={() => {
+                navigate(`/user/${userName}`);
+              }}
+            >
+              Profile
+            </li>
             <li>Style Avatar</li>
             <li>User Settings</li>
             <hr />
@@ -89,7 +110,7 @@ const ProfileSection = () => {
               Content Policy
             </li>
             <hr />
-            <li className={styles.logout}>
+            <li className={styles.logout} onClick={handleLogOut}>
               <BsBoxArrowRight />
               Log Out
             </li>

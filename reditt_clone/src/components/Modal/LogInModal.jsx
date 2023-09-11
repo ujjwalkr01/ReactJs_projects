@@ -47,7 +47,7 @@ const LogInModal = (props) => {
                 <Link to="/">Privacy Policy</Link>.
               </p>
               <button className={styles.signGoogleBtn}>
-                <img src="./images/googlelogo.png" width="20px" height="20px" />
+                <img src="./images/googlelogo.png" width="20px" height="20px" alt="logo" />
                 <span className={styles.btnText}>Continue with Google</span>
               </button>
               <br />
