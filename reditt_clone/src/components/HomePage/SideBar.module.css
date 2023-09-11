@@ -1,12 +1,13 @@
 .parentContainer {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 85vh;
   overflow-y: scroll;
   width: 270px;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-right: 1px solid rgb(226, 226, 226);
+  margin-top: 3.5rem;
 }
 .parentContainer ul {
   list-style: none;
@@ -69,6 +70,11 @@ h4 {
   font-size: 12px;
 }
 @media screen and (max-width: 480px) {
+  .parentContainer {
+    display: none;
+  }
+}
+@media screen and (min-width) and (max-width: 480px) {
   .parentContainer {
     display: none;
   }

@@ -16,14 +16,16 @@ function App() {
   const [isNotLoggedIn, setIsNotLoggedIn] = useState(true);
   const [toggleTheme, setToggleTheme] = useState(false);
 
-  if (toggleTheme) {
-    document.body.style = "background: rgb(63, 63, 63); color:#fff;";
-  } else {
-    document.body.style = "background: white; color:black;";
-  }
-
   const isLoggedIn = sessionStorage.getItem("logInStatus");
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
+
+  if (isLoggedIn && !toggleTheme) {
+    document.body.style = "background: rgb(179, 194, 206);";
+  } else if (isLoggedIn && toggleTheme) {
+    document.body.style = "background: rgb(63, 63, 63); color:white;";
+  } else if (!isLoggedIn) {
+    document.body.style = "background:white; color:black";
+  }
 
   return (
     <>
@@ -31,9 +33,11 @@ function App() {
         <CheckLogInStat.Provider value={{ setIsNotLoggedIn, isLoggedIn }}>
           <ModalCtx.Provider value={{ setShowModal }}>
             <Navigatonbar />
-            {isNotLoggedIn && !isLoggedIn && <Home />}
             {showModal && !isLoggedIn && <LogInModal />}
             <Routes>
+              {isNotLoggedIn && !isLoggedIn && (
+                <Route path="/" element={<Home />} />
+              )}
               {!isNotLoggedIn && isLoggedIn && (
                 <Route path={`/user/${userName}`} element={<ProfilePage />} />
               )}

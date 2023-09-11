@@ -1,0 +1,206 @@
+.parentContainer {
+  margin-top: 4rem;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatarCreate {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20200619190327/avatar_default_19_A06A42.png");
+  border-radius: 70%;
+}
+.createPostSect {
+  display: flex;
+  width: 46%;
+  align-items: center;
+  padding: 0.45rem;
+  gap: 2%;
+  font-size: 18px;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+  cursor: pointer;
+}
+.createPost:hover {
+  background-color: #cccccc;
+}
+.createPostSect input {
+  width: 84%;
+  height: 30px;
+  padding: 0.4rem;
+  background: rgb(218, 228, 236);
+  border: none;
+  border-radius: 4px;
+}
+input:hover {
+  border: 1px solid rgb(94, 77, 243);
+}
+input:focus {
+  outline: none;
+  border: 1px solid rgb(94, 77, 243);
+}
+.postSect {
+  /* border: 1px solid black; */
+  display: flex;
+  width: 46.8%;
+  gap: 2%;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  background-color: #fdfdfd;
+}
+.postSect:hover {
+  cursor: pointer;
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.likeSect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4%;
+  /* border-right: 1px solid black; */
+  padding: 0.8rem;
+  font-size: 18px;
+  border-radius: 4px;
+  background-color: rgb(235, 235, 235);
+}
+.likeSect p {
+  font-size: 15px;
+}
+.upvote:hover {
+  color: orangered;
+  cursor: pointer;
+}
+.devote:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.profileDetails {
+  /* border: 1px solid blueviolet; */
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 1%;
+  padding: 0.3rem;
+}
+.profileDetails p:nth-child(2):hover {
+  text-decoration: underline;
+}
+.profileImg {
+  width: 6%;
+  height: 2rem;
+  background-size: cover;
+  border-radius: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.postedBy {
+  font-size: 12px;
+  font-weight: normal;
+  color: darkgray;
+}
+.postTime {
+  /* border: 1px solid blue; */
+  width: 20%;
+  font-size: 12px;
+  font-weight: normal;
+  color: darkgray;
+  display: flex;
+  gap: 4%;
+}
+.postContent {
+  /* border: 1px solid red; */
+  padding: 1rem;
+  width: 90%;
+}
+.commentSect {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  width: 20%;
+  margin: 0.5rem 0;
+  padding: 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.commentSect p {
+  font-size: 14px;
+  font-weight: 450;
+  color: darkgray;
+}
+.commentSect:hover {
+  background: #dbdbdb;
+}
+.dark {
+  background: rgb(70, 70, 70);
+  color: #fff;
+}
+.darkLike {
+  background: rgb(36, 35, 35);
+  color: #fff;
+}
+@media screen and (max-width: 480px) {
+  .parentContainer {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .createPostSect {
+    width: 91%;
+  }
+  .avatarCreate {
+    width: 2rem;
+    height: 2rem;
+  }
+  .postSect {
+    width: 94%;
+  }
+  .profileDetails {
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 1.5%;
+  }
+  .likeSect {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    padding: 0.4rem;
+    font-size: 18px;
+  }
+  .profileImg {
+    width: 7%;
+    height: 1.5rem;
+  }
+  .postedBy,
+  .postTime {
+    font-size: 10px;
+  }
+  .postContent {
+    font-size: 14px;
+  }
+  .commentSect {
+    font-size: 11px;
+    width: 25%;
+    margin: 0.3rem 0;
+    padding: 0.4rem;
+  }
+  .commentSect p {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1180px) {
+}

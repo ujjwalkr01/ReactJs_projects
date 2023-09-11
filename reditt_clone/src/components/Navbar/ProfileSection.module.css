@@ -1,15 +1,15 @@
 .profileInfo {
   /* border: 1px solid rgb(219, 219, 219); */
   border-radius: 4px;
-  width: 15rem;
-  padding: 0.3rem;
+  width: 14rem;
+  padding: 0.3rem 0.2rem;
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 }
-.profileInfo section:first-child {
+.profileInfo section:first-child,.madeBy {
   display: flex;
   align-items: center;
   gap: 2%;
@@ -31,9 +31,9 @@
 
 .modal {
   /* border: 1px solid red; */
-  width: 16rem;
+  width: 15rem;
   background-color: rgb(248, 249, 250);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400px;
   height: 70vh;
   overflow: scroll;
@@ -41,8 +41,8 @@
   position: absolute;
   margin-top: 1.2rem;
   margin-right: 1rem;
-  top: 7%;
-  right: 8px;
+  top: 70%;
+  right: 6px;
   z-index: 1000;
   padding: 0.6rem;
   border-radius: 6px;
@@ -60,7 +60,6 @@
   font-size: 15px;
   font-weight: 500;
   padding: 0.8rem;
-  /* margin-bottom: 0.5rem; */
   margin-left: 10%;
   border-radius: 8px;
 }
@@ -68,13 +67,21 @@
   background-color: rgb(165, 165, 165);
   cursor: pointer;
 }
+.normalMode {
+  color: black;
+  text-decoration: none;
+}
+.darkMode {
+  color: white;
+  text-decoration: none;
+}
 .modal ul hr {
   width: 100%;
   margin-top: 0.5rem;
   border: 1px solid rgb(231, 229, 229);
 }
 .dark {
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(65, 64, 64);
   color: #fff;
 }
 .toggler1 {
@@ -109,6 +116,8 @@
   padding: 0.7rem;
   border-radius: 6px;
 }
+
+
 @media screen and (max-width: 468px) {
   .profileInfo {
     height: 2rem;
@@ -126,7 +135,7 @@
   }
   .modal {
     position: absolute;
-    top: 5.5%;
+    top: 65.5%;
     height: 58vh;
     right: 0%;
     width: 11rem;
@@ -138,6 +147,9 @@
   .toggler1,
   .toggler2 {
     gap: 10%;
+  }
+  .notActive,.notActive p{
+    font-size: 13px;
   }
 }
 

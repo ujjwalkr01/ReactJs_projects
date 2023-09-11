@@ -9,24 +9,41 @@ import { ModalCtx } from "../../App";
 const Post = (props) => {
   const [postDataList, setPostData] = useState([]);
   const { setShowModal } = useContext(ModalCtx);
+  let [page, setPage] = useState(1);
 
   const fetchPostData = async () => {
     try {
       const config = getHeaderWithProjectId();
       const res = await axios.get(
-        "https://academics.newtonschool.co/api/v1/reddit/post",
+        `https://academics.newtonschool.co/api/v1/reddit/post?page=${page}&limit=10`,
         config
       );
-      // console.log(res.data.data[0]);
+      console.log(res.data);
       const postData = res.data.data;
-      setPostData(postData);
+      setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
       console.error(err);
     }
   };
 
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight - 100
+    ) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
+
   useEffect(() => {
     fetchPostData();
+  }, [page]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleLogInModal = () => {

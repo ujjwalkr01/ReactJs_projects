@@ -1,7 +1,6 @@
 import styles from "./Buttons.module.css";
 import { useState, useRef, useEffect, useContext } from "react";
 import { BsBoxArrowInRight, BsHandbag } from "react-icons/bs";
-import { IoEnterOutline } from "react-icons/io5";
 import { MdAdsClick } from "react-icons/md";
 import { ModalCtx } from "../../App";
 

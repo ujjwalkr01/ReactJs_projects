@@ -21,6 +21,7 @@ const Navigatonbar = (props) => {
 
   return (
     <div
+      id="mainNav"
       className={
         toggleTheme
           ? `${styles.parentContainer} ${styles.dark}`
@@ -50,7 +51,7 @@ const Navigatonbar = (props) => {
           <BsArrowUpRightCircle className={styles.popular} />
           <BsChatDots />
           <BsBell />
-          <BsPlusLg />
+          <BsPlusLg className={styles.plusSign}/>
           <button>
             <GrAnnounce />
           </button>

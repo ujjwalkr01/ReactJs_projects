@@ -12,7 +12,7 @@ const SignUpPage = () => {
   });
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
-  const { setIsNotLoggedIn } = useContext(CheckLogInStat);
+  // const { setIsNotLoggedIn } = useContext(CheckLogInStat);
   const handleUserInput = (event) => {
     const { name, value } = event.target;
     setUserInfo({ ...userInfo, [name]: value });
@@ -32,7 +32,8 @@ const SignUpPage = () => {
       console.log(res);
       if (res.data.token) {
         sethasError(false);
-        setIsNotLoggedIn(false);
+        setErrMessage("Account created succesffuly!");
+        // setIsNotLoggedIn(true);
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
       }
@@ -79,7 +80,11 @@ const SignUpPage = () => {
         onChange={handleUserInput}
         required
       />
-      {hasError && <p className={styles.errorMsg}>{errMessage}</p>}
+      {hasError ? (
+        <p className={styles.errorMsg}>{errMessage}</p>
+      ) : (
+        <p className={styles.succesfullMsg}>{errMessage}</p>
+      )}
 
       <button className={styles.loginBtn}>Continue</button>
     </form>

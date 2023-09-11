@@ -34,13 +34,13 @@
   border-radius: 50%;
 }
 .modal {
-  width: 15rem;
+  width: 14rem;
   background-color: rgb(248, 249, 250);
   font-size: 18px;
   font-weight: 400px;
   height: 8rem;
   position: absolute;
-  /* margin-top: 1.2rem; */
+  margin-top: 3.6rem;
   margin-right: 1rem;
   top: 9.5%;
   right: 10px;
@@ -97,7 +97,8 @@
     top: 5.1%;
     padding: 0.6rem;
   }
-  .getAppbtn {
+  .getAppbtn,
+  .setting {
     display: none;
   }
 }

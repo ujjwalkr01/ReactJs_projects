@@ -1,14 +1,17 @@
 .parentContainer {
   display: flex;
   background-color: white;
-  height: 44px;
-  padding: 8px 1.5rem;
+  padding: 6px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-bottom: 1px solid rgb(155, 153, 153);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 .dark {
-  background: rgb(44, 44, 44);
+  background: rgb(70, 70, 70);
   color: #fff;
 }
 .logo {
@@ -20,8 +23,8 @@
 .btnContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-evenly;
+  width: 20%;
 }
 .searchContainer {
   display: flex;
@@ -99,9 +102,6 @@
   .logoText {
     display: none;
   }
-  .parentContainer {
-    padding: 10px;
-  }
   .filter {
     width: 5rem;
   }
@@ -115,7 +115,8 @@
   }
 
   .filter section p,
-  .popular {
+  .popular,
+  .plusSign {
     display: none;
   }
 }
@@ -123,9 +124,10 @@
   .logoText {
     display: none;
   }
-  .parentContainer {
-    padding: 10px;
-  }
+  /* .parentContainer {
+    padding: px;
+    width: 100%;
+  }  */
   .filter {
     width: 3rem;
   }

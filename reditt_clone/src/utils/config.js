@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom";
+
 const PROJECT_ID = "6g5cmsw85lyy";
 
 export const getHeaderWithProjectId = () => {
@@ -18,4 +20,10 @@ export const getToken = () => {
   } else {
     return false;
   }
+};
+
+export const getUserInfo = () => {
+  const userName = JSON.parse(sessionStorage.getItem("userInfo"));
+  // const {userName}=useParams();
+  return userName;
 };

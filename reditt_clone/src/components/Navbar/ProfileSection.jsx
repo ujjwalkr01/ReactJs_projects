@@ -28,6 +28,7 @@ const ProfileSection = () => {
   const handleLogOut = () => {
     setIsNotLoggedIn(true);
     setToggleTheme(false);
+    navigate("/");
     sessionStorage.removeItem("logInStatus");
     sessionStorage.removeItem("userInfo");
     sessionStorage.removeItem("authToken");
@@ -40,7 +41,7 @@ const ProfileSection = () => {
           <div className={styles.avatarImg}></div>
           <article>
             <p>{userName}</p>
-            <p>
+            <p className={styles.madeBy}>
               <GrDiamond />
               ujjwl
             </p>
