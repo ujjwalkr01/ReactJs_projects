@@ -33,66 +33,50 @@ const Post = (props) => {
     setShowModal(true);
   };
   return (
-    <>
-      <div className={styles.parentContainer}>
-        <button onClick={handleLogInModal}>
-          <div className={styles.createBtn}></div>
-          <p>Create a post</p>
-        </button>
-        <div>
-          <ul>
-            {postDataList.map((el) => (
-              <>
-                <li className={styles.listCont} key={el._id}>
-                  <div className={styles.channelDetails}>
-                    <div
-                      className={styles.profileImg}
-                      style={{ backgroundImage: `url(${el.channel.image})` }}
-                    ></div>
-                    <p>r/{el.channel.name}</p>
-                  </div>
-                  <div className={styles.contents}>{el.content}</div>
-                  <div className={styles.like_commBtn}>
-                    <button>
-                      <button
-                        className={styles.upvote}
-                        onClick={handleLogInModal}
-                      >
-                        <TbArrowBigUp />
-                      </button>
-                      <p>{el.likeCount}</p>
-                      <button
-                        className={styles.devote}
-                        onClick={handleLogInModal}
-                      >
-                        <TbArrowBigDown />
-                      </button>
-                    </button>
-                    <button
-                      className={styles.comment}
-                      onClick={handleLogInModal}
-                    >
-                      <button>
-                        <BsChatLeft />
-                      </button>
-                      <p> {el.commentCount}</p>
-                    </button>
-                    <button className={styles.share} onClick={handleLogInModal}>
-                      <button>
-                        <BsUpload />
-                      </button>
-                      <p>Share</p>
-                    </button>
-                  </div>
-                </li>
-                <hr />
-              </>
-            ))}
-          </ul>
-        </div>
+    <div className={styles.parentContainer}>
+      <button onClick={handleLogInModal}>
+        <div className={styles.createBtn}></div>
+        <p>Create a post</p>
+      </button>
+      <div>
+        {postDataList.map((el, indx) => (
+          <>
+            <section className={styles.listCont} key={indx}>
+              <div className={styles.channelDetails}>
+                <div
+                  className={styles.profileImg}
+                  style={{ backgroundImage: `url(${el.channel.image})` }}
+                ></div>
+                <p>r/{el.channel.name}</p>
+              </div>
+              <div className={styles.contents}>{el.content}</div>
+              <div className={styles.like_commBtn}>
+                <button>
+                  <TbArrowBigUp
+                    className={styles.upvote}
+                    onClick={handleLogInModal}
+                  />
+                  <p>{el.likeCount}</p>
+                  <TbArrowBigDown
+                    className={styles.devote}
+                    onClick={handleLogInModal}
+                  />
+                </button>
+                <button className={styles.comment} onClick={handleLogInModal}>
+                  <BsChatLeft />
+                  <p> {el.commentCount}</p>
+                </button>
+                <button className={styles.share} onClick={handleLogInModal}>
+                  <BsUpload />
+                  <p>Share</p>
+                </button>
+              </div>
+            </section>
+            <hr />
+          </>
+        ))}
       </div>
-      {/* {openLogInModal && <LogInModal />} */}
-    </>
+    </div>
   );
 };
 export default Post;
