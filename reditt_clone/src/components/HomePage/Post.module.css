@@ -86,6 +86,20 @@ hr {
   background-repeat: no-repeat;
   background-position: center;
 }
+.postedBy {
+  font-size: 12px;
+  font-weight: normal;
+  color: darkgray;
+}
+.postTime {
+  /* border: 1px solid blue; */
+  width: 20%;
+  font-size: 12px;
+  font-weight: normal;
+  color: darkgray;
+  display: flex;
+  gap: 4%;
+}
 .like_commBtn {
   display: flex;
   align-items: center;

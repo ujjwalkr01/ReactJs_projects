@@ -1,15 +1,19 @@
 import axios from "axios";
 import { getHeaderWithProjectId } from "../../utils/config";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import styles from "./AfterLogInHomePage.module.css";
 import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 import { BsChatLeft } from "react-icons/bs";
 import { TfiImage, TfiLink } from "react-icons/tfi";
 import { ThemeTogglerCtx } from "../../App";
+import PostInfoCard from "./PostInfoCard";
+import { PostInfoProvider } from "../../Provider/PostInfoProvider";
+import ProfilePage from "./ProfilePage";
 
 const AfterLogInHomePage = () => {
   const [postDataList, setPostData] = useState([]);
   let [page, setPage] = useState(1);
+
   const { toggleTheme } = useContext(ThemeTogglerCtx);
 
   const fetchPostData = async () => {
@@ -19,8 +23,7 @@ const AfterLogInHomePage = () => {
         `https://academics.newtonschool.co/api/v1/reddit/post?page=${page}&limit=10`,
         config
       );
-      console.log(res.data);
-      const postData = res.data.data;
+      //  console.log(res.data);
       setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
       console.error(err);
@@ -48,72 +51,26 @@ const AfterLogInHomePage = () => {
   }, []);
 
   return (
-    <main className={styles.parentContainer}>
-      <section
-        className={
-          toggleTheme
-            ? `${styles.createPostSect} ${styles.dark}`
-            : `${styles.createPostSect}`
-        }
-      >
-        <div className={styles.avatarCreate}></div>
-        <input type="text" placeholder="Create Post" />
-        <TfiImage className={styles.createPost} />
-        <TfiLink className={styles.createPost} />
-      </section>
-      {postDataList.map((el, indx) => (
+    <PostInfoProvider>
+      <main className={styles.parentContainer}>
         <section
-          key={indx}
           className={
             toggleTheme
-              ? `${styles.postSect} ${styles.dark}`
-              : `${styles.postSect}`
+              ? `${styles.createPostSect} ${styles.dark}`
+              : `${styles.createPostSect}`
           }
         >
-          <div
-            className={
-              toggleTheme
-                ? `${styles.likeSect} ${styles.darkLike}`
-                : `${styles.likeSect}`
-            }
-          >
-            <TbArrowBigUp
-              className={styles.upvote}
-              // onClick={handleLogInModal}
-            />
-            <p>{el.likeCount}</p>
-            <TbArrowBigDown
-              className={styles.devote}
-              // onClick={handleLogInModal}
-            />
-          </div>
-          <div>
-            <section className={styles.profileDetails}>
-              <div
-                className={styles.profileImg}
-                style={{ backgroundImage: `url(${el.channel.image})` }}
-              ></div>
-              <p>r/{el.channel.name}.</p>
-              <p className={styles.postedBy}>
-                Posted by u/{Math.random().toString(36).substring(2, 10)}
-              </p>
-              <p className={styles.postTime}>
-                {Math.floor(Math.random() * (24 - 1)) + 1}
-                <span>hours ago</span>{" "}
-              </p>
-            </section>
-            <section className={styles.postContent}>
-              <p>{el.content}</p>
-            </section>
-            <section className={styles.commentSect}>
-              {" "}
-              <BsChatLeft />
-              <p> {el.commentCount} Comments</p>
-            </section>
-          </div>
+          <div className={styles.avatarCreate}></div>
+          <input type="text" placeholder="Create Post" />
+          <TfiImage className={styles.createPost} />
+          <TfiLink className={styles.createPost} />
+          <ProfilePage />
         </section>
-      ))}
-    </main>
+        {postDataList.map((ele, indx) => (
+          <PostInfoCard key={indx} {...ele} />
+        ))}
+      </main>
+    </PostInfoProvider>
   );
 };
 export default AfterLogInHomePage;

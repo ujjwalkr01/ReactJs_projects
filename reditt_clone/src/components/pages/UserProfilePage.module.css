@@ -1,0 +1,17 @@
+.parentContainer{
+    margin-top: 4rem;
+    border: 1px solid red;
+    padding: 1rem;
+}
+.listContainer ul{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+.anotherDiv{
+    border: 2px solid red;
+    height: 5rem;
+}

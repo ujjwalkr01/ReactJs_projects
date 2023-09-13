@@ -18,7 +18,7 @@ const Post = (props) => {
         `https://academics.newtonschool.co/api/v1/reddit/post?page=${page}&limit=10`,
         config
       );
-      console.log(res.data);
+      // console.log(res.data);
       const postData = res.data.data;
       setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
@@ -65,6 +65,11 @@ const Post = (props) => {
                   style={{ backgroundImage: `url(${el.channel.image})` }}
                 ></div>
                 <p>r/{el.channel.name}</p>
+                <p className={styles.postedBy}>Posted by u/{el.author.name}</p>
+                <p className={styles.postTime}>
+                  {Math.floor(Math.random() * (24 - 1)) + 1}
+                  <span>hours ago</span>{" "}
+                </p>
               </div>
               <div className={styles.contents}>{el.content}</div>
               <div className={styles.like_commBtn}>

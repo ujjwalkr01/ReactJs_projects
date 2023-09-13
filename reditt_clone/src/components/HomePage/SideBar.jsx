@@ -27,17 +27,21 @@ import {
   RiSteeringFill,
   RiScales3Line,
 } from "react-icons/ri";
+import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <div className={styles.parentContainer}>
       <div className={styles.firstSection}>
         <p>
           <BsFillHouseDoorFill />
-          Home
+          <Link to="/">Home</Link>
         </p>
         <p>
           <HiMiniArrowTopRightOnSquare />
-          Popular
+          <a href="" target="_blank">
+            {" "}
+            Popular
+          </a>
         </p>
       </div>
       <hr />
@@ -46,11 +50,18 @@ const SideBar = () => {
         <ul>
           <li>
             <SlGameController />
-            Gaming
+            <a
+              href="https://www.reddit.com/t/call_of_duty_warzone/"
+              target="_blank"
+            >
+              Gaming
+            </a>
           </li>
           <li>
             <SlSocialDribbble />
-            Sports
+            <a href="https://www.reddit.com/t/premier_league/" target="_blank">
+              Sports
+            </a>
           </li>
           <li>
             <FcBullish />
@@ -104,14 +115,6 @@ const SideBar = () => {
             Food and Drink
           </li>
           <li>
-            <RiSteeringFill />
-            Cars and Motor Vehicles
-          </li>
-          <li>
-            <TbJewishStarFilled />
-            Celebrity
-          </li>
-          <li>
             <SlPlane />
             Travel
           </li>
@@ -123,7 +126,9 @@ const SideBar = () => {
         <ul>
           <li>
             <FcReddit />
-            About Reddit
+            <a href="https://www.redditinc.com/" target="_blank">
+              About Reddit
+            </a>
           </li>
           <li>
             <ImBullhorn />
@@ -139,7 +144,9 @@ const SideBar = () => {
           </li>
           <li>
             <FcSupport />
-            Careers
+            <a href="https://www.redditinc.com/careers" target="_blank">
+              Careers
+            </a>
           </li>
           <li>
             <PiMicrophoneStageThin />
@@ -164,16 +171,22 @@ const SideBar = () => {
       <div className={styles.policy}>
         <ul>
           <li>
-            <RiDraftLine />
-            Content Policy
-          </li>
-          <li>
             <RiScales3Line />
-            Privacy Policy
+            <a
+              href="https://www.reddit.com/policies/privacy-policy"
+              target="_blank"
+            >
+              Privacy Policy
+            </a>
           </li>
           <li>
             <RiFileList3Line />
-            User Agreement
+            <a
+              href="https://www.redditinc.com/policies/user-agreement"
+              target="_blank"
+            >
+              User Agreement
+            </a>
           </li>
         </ul>
       </div>

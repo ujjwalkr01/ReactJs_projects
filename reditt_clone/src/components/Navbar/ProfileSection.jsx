@@ -13,9 +13,8 @@ import { useNavigate } from "react-router-dom";
 const ProfileSection = () => {
   const [showProfileModal, setShowProfileModal] = useState(false);
 
-  const { toggleTheme } = useContext(ThemeTogglerCtx);
+  const { toggleTheme, setToggleTheme } = useContext(ThemeTogglerCtx);
   const { setIsNotLoggedIn } = useContext(CheckLogInStat);
-  const { setToggleTheme } = useContext(ThemeTogglerCtx);
 
   const navigate = useNavigate();
 
@@ -28,7 +27,7 @@ const ProfileSection = () => {
   const handleLogOut = () => {
     setIsNotLoggedIn(true);
     setToggleTheme(false);
-    navigate("/");
+    navigate("");
     sessionStorage.removeItem("logInStatus");
     sessionStorage.removeItem("userInfo");
     sessionStorage.removeItem("authToken");
@@ -60,13 +59,6 @@ const ProfileSection = () => {
             <p>My Stuff</p>
           </article>
           <ul>
-            <li
-              className={styles.toggler1}
-              onClick={() => setShowProfileModal(true)}
-            >
-              <p>Online Status</p>
-              <ToggleSwitch />
-            </li>
             <li
               onClick={() => {
                 navigate(`/user/${userName}`);

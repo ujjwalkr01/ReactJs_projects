@@ -38,7 +38,9 @@ const Navigatonbar = (props) => {
           <GrDown />
         </div>
       )}
+
       <SearchInput />
+
       {!isLoggedIn && (
         <div className={styles.btnContainer}>
           <GetAppBtn />
@@ -51,7 +53,7 @@ const Navigatonbar = (props) => {
           <BsArrowUpRightCircle className={styles.popular} />
           <BsChatDots />
           <BsBell />
-          <BsPlusLg className={styles.plusSign}/>
+          <BsPlusLg className={styles.plusSign} />
           <button>
             <GrAnnounce />
           </button>

@@ -6,15 +6,18 @@ import React, { useState, useContext, createContext, useEffect } from "react";
 import LogInModal from "./components/Modal/LogInModal";
 import ProfilePage from "./components/pages/ProfilePage";
 import AfterLogInHomePage from "./components/pages/AfterLogInHomePage";
+import UserProfilePage from "./components/pages/UserProfilePage";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
 export const ThemeTogglerCtx = createContext();
+export const CommunityListCtx = createContext();
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [isNotLoggedIn, setIsNotLoggedIn] = useState(true);
   const [toggleTheme, setToggleTheme] = useState(false);
+  const [searchCommunityList, setSearchCommunityList] = useState([]);
 
   const isLoggedIn = sessionStorage.getItem("logInStatus");
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
@@ -27,25 +30,41 @@ function App() {
     document.body.style = "background:white; color:black";
   }
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showModal]);
+
   return (
     <>
       <ThemeTogglerCtx.Provider value={{ toggleTheme, setToggleTheme }}>
         <CheckLogInStat.Provider value={{ setIsNotLoggedIn, isLoggedIn }}>
           <ModalCtx.Provider value={{ setShowModal }}>
-            <Navigatonbar />
-            {showModal && !isLoggedIn && <LogInModal />}
-            <Routes>
-              {isNotLoggedIn && !isLoggedIn && (
-                <Route path="/" element={<Home />} />
-              )}
-              {!isNotLoggedIn && isLoggedIn && (
-                <Route path={`/user/${userName}`} element={<ProfilePage />} />
-              )}
-              <Route
-                path={`/user/home=true`}
-                element={<AfterLogInHomePage />}
-              />
-            </Routes>
+            <CommunityListCtx.Provider
+              value={{ setSearchCommunityList, searchCommunityList }}
+            >
+              <Navigatonbar />
+              {showModal && !isLoggedIn && <LogInModal />}
+              <Routes>
+                {isNotLoggedIn && !isLoggedIn && (
+                  <Route path="" element={<Home />} />
+                )}
+                {/* {!isNotLoggedIn && isLoggedIn && (
+                  <Route path={`/user/${userName}`} element={<ProfilePage />} />
+                )} */}
+                <Route
+                  path={`/user/home=true`}
+                  element={<AfterLogInHomePage />}
+                />
+                <Route
+                  path={`/user/${userName}`}
+                  element={<UserProfilePage />}
+                />
+              </Routes>
+            </CommunityListCtx.Provider>
           </ModalCtx.Provider>
         </CheckLogInStat.Provider>
       </ThemeTogglerCtx.Provider>

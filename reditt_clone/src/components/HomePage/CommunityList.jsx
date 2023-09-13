@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { getHeaderWithProjectId } from "../../utils/config";
 import styles from "./CommunityList.module.css";
+import { CommunityListCtx } from "../../App";
 
 const CommunityList = () => {
   const [CommunityList, setCommunityList] = useState([]);
+  const {setSearchCommunityList, searchCommunityList}=useContext(CommunityListCtx);
 
   const fetchingPost = async () => {
     const config = getHeaderWithProjectId();
@@ -14,7 +16,10 @@ const CommunityList = () => {
         config
       );
       const communityData = res.data.data;
+      // console.log(res.data.data);
       setCommunityList(communityData);
+      setSearchCommunityList(communityData);
+      console.log(searchCommunityList)
     } catch (err) {
       console.error(err.message);
     }
