@@ -122,9 +122,19 @@ input:focus {
   padding: 1rem;
   width: 90%;
 }
+
 .commentSect {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0.8rem 0.5rem;
+}
+
+.commentSymbol {
   border: none;
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
@@ -134,13 +144,62 @@ input:focus {
   border-radius: 6px;
   cursor: pointer;
 }
-.commentSect p {
+.commentSymbol p {
   font-size: 14px;
-  font-weight: 450;
+  font-weight: 470;
   color: darkgray;
 }
-.commentSect:hover {
+.commentSymbol:hover {
   background: #dbdbdb;
+}
+.parentComSec {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: none;
+  /* background-color: rgb(240, 240, 240); */
+}
+.commentsByUser {
+  /* border: 1px solid red; */
+  padding: 0.8rem;
+  width: 94%;
+  border-radius: 6px;
+  background-color: rgb(240, 240, 240);
+}
+.commentsByUser section {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  margin-bottom: 0.3rem;
+  margin-left: 0.4rem;
+  /* border: 1px solid red; */
+}
+.commentsByUser section main {
+  display: flex;
+  align-items: center;
+}
+.commentsByUser section main p {
+  margin-left: 0.5rem;
+}
+.commentsByUser section p {
+  font-size: 10.2px;
+  color: rgb(180, 180, 180);
+  font-weight: 500;
+}
+.commentsByUser section span {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.commentsByUser section span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.commentContent {
+  font-size: 14px;
+  margin-left: 0.8rem;
+  color: rgb(80, 80, 80);
+  font-weight: 500;
 }
 .dark {
   background: rgb(70, 70, 70);
@@ -149,6 +208,31 @@ input:focus {
 .darkLike {
   background: rgb(36, 35, 35);
   color: #fff;
+}
+.postComment {
+  /* border: 1px solid red; */
+  width: 98%;
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  padding: 0.3rem;
+}
+.textComment {
+  margin-top: 0.5rem;
+  width: 85%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #f5f5f5;
+}
+/* rgb(25, 180, 252) */
+.postBtn {
+  background-color: rgb(26, 131, 180);
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-top: 0.4rem;
+  border-radius: 6px;
 }
 @media screen and (max-width: 480px) {
   .parentContainer {
@@ -192,15 +276,50 @@ input:focus {
   .postContent {
     font-size: 14px;
   }
-  .commentSect {
+  .commentSymbol {
     font-size: 11px;
     width: 25%;
     margin: 0.3rem 0;
     padding: 0.4rem;
   }
-  .commentSect p {
+  .commentSymbol p {
     font-size: 11px;
+  }
+  .commentContent {
+    font-size: 12px;
+  }
+  .commentsByUser {
+    /* border: 1px solid red; */
+    padding: 0.8rem;
+    width: 85%;
+    border-radius: 6px;
+    background-color: rgb(240, 240, 240);
+  }
+  .postComment {
+    width: 90%;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 1180px) {
+  .commentSymbol {
+    font-size: 11px;
+    width: 25%;
+    margin: 0.3rem 0;
+    padding: 0.4rem;
+  }
+  .commentSymbol p {
+    font-size: 11px;
+  }
+  .commentContent {
+    font-size: 12px;
+  }
+  .commentsByUser {
+    /* border: 1px solid red; */
+    padding: 0.8rem;
+    width: 85%;
+    border-radius: 6px;
+    background-color: rgb(240, 240, 240);
+  }
+  .postComment {
+    width: 90%;
+  }
 }

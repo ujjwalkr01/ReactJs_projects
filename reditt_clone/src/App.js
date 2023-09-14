@@ -2,11 +2,11 @@ import "./App.css";
 import Navigatonbar from "./components/Navbar/Navigatonbar";
 import Home from "./components/HomePage/Home";
 import { Routes, Route } from "react-router-dom";
-import React, { useState, useContext, createContext, useEffect } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import LogInModal from "./components/Modal/LogInModal";
-import ProfilePage from "./components/pages/ProfilePage";
 import AfterLogInHomePage from "./components/pages/AfterLogInHomePage";
 import UserProfilePage from "./components/pages/UserProfilePage";
+import Comments from "./components/pages/Comments";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
@@ -52,9 +52,6 @@ function App() {
                 {isNotLoggedIn && !isLoggedIn && (
                   <Route path="" element={<Home />} />
                 )}
-                {/* {!isNotLoggedIn && isLoggedIn && (
-                  <Route path={`/user/${userName}`} element={<ProfilePage />} />
-                )} */}
                 <Route
                   path={`/user/home=true`}
                   element={<AfterLogInHomePage />}
@@ -63,6 +60,7 @@ function App() {
                   path={`/user/${userName}`}
                   element={<UserProfilePage />}
                 />
+                <Route path={`/user/comments`} element={<Comments />} />
               </Routes>
             </CommunityListCtx.Provider>
           </ModalCtx.Provider>

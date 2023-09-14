@@ -2,13 +2,10 @@ import axios from "axios";
 import { getHeaderWithProjectId } from "../../utils/config";
 import { useEffect, useState, useContext, useRef } from "react";
 import styles from "./AfterLogInHomePage.module.css";
-import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
-import { BsChatLeft } from "react-icons/bs";
 import { TfiImage, TfiLink } from "react-icons/tfi";
 import { ThemeTogglerCtx } from "../../App";
 import PostInfoCard from "./PostInfoCard";
 import { PostInfoProvider } from "../../Provider/PostInfoProvider";
-import ProfilePage from "./ProfilePage";
 
 const AfterLogInHomePage = () => {
   const [postDataList, setPostData] = useState([]);
@@ -23,7 +20,7 @@ const AfterLogInHomePage = () => {
         `https://academics.newtonschool.co/api/v1/reddit/post?page=${page}&limit=10`,
         config
       );
-      //  console.log(res.data);
+      console.log(res.data);
       setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
       console.error(err);
@@ -64,10 +61,9 @@ const AfterLogInHomePage = () => {
           <input type="text" placeholder="Create Post" />
           <TfiImage className={styles.createPost} />
           <TfiLink className={styles.createPost} />
-          <ProfilePage />
         </section>
         {postDataList.map((ele, indx) => (
-          <PostInfoCard key={indx} {...ele} />
+          <PostInfoCard key={ele._id} {...ele} />
         ))}
       </main>
     </PostInfoProvider>

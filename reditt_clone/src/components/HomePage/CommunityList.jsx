@@ -19,7 +19,7 @@ const CommunityList = () => {
       // console.log(res.data.data);
       setCommunityList(communityData);
       setSearchCommunityList(communityData);
-      console.log(searchCommunityList)
+      // console.log(searchCommunityList)
     } catch (err) {
       console.error(err.message);
     }

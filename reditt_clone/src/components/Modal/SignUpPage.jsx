@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import styles from "./LogInModal.module.css";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
-import { CheckLogInStat } from "../../App";
+
 
 const SignUpPage = () => {
   const [userInfo, setUserInfo] = useState({
