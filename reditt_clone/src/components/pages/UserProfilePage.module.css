@@ -1,17 +1,114 @@
-.parentContainer{
-    margin-top: 4rem;
-    border: 1px solid red;
-    padding: 1rem;
+.parentContainer {
+  margin-top: 3.8rem;
+  /* border: 1px solid red; */
+  padding: 0.1rem;
+  height: 380px;
+  background-color: white;
+  border-radius: 4px;
 }
-.listContainer ul{
-    border: 1px solid black;
+.coverPhoto {
+  background-image: url("https://www.redditinc.com/assets/images/blog/_1000x483_crop_center-center_none/hero-office-snoo_2021-08-18-235331_htmb.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  /* border: 2px solid blue; */
+}
+.profilePhoto {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8QMxFiLt3MCuY5mLpOlggf2G321YiLO2MVg&usqp=CAU");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  /* border: 1px solid red; */
+  border-radius: 70%;
+  position: fixed;
+  top: 40%;
+  left: 1%;
+}
+.profileName {
+  margin-top: 0.5rem;
+  margin-left: 8rem;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(104, 30, 241);
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  padding: 0.5rem;
+}
+.details p {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  /* border: 1px solid blue; */
+  color: rgb(255, 100, 100);
+  width: 18rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+.details p span {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+.details p:nth-child(3) {
+  gap: 3%;
+}
+.userLogo {
+  border: 1px solid rgb(117, 117, 117);
+  padding: 0.2rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  border-radius: 70%;
+}
+.dark {
+  background: rgb(70, 70, 70);
+  color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  .parentContainer {
+    height: 380px;
+  }
+
+  .coverPhoto {
+    height: 180px;
+  }
+  .profilePhoto {
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    top: 26%;
+    left: 1%;
+  }
+  .profileName {
+    margin-left: 6rem;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    list-style: none;
-}
-.anotherDiv{
-    border: 2px solid red;
-    height: 5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .details p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .details p span {
+    font-size: 16px;
+  }
+  .userLogo {
+    font-size: 16px;
+  }
 }

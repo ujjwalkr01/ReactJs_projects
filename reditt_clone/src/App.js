@@ -6,7 +6,6 @@ import React, { useState, createContext, useEffect } from "react";
 import LogInModal from "./components/Modal/LogInModal";
 import AfterLogInHomePage from "./components/pages/AfterLogInHomePage";
 import UserProfilePage from "./components/pages/UserProfilePage";
-import Comments from "./components/pages/Comments";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
@@ -60,7 +59,6 @@ function App() {
                   path={`/user/${userName}`}
                   element={<UserProfilePage />}
                 />
-                <Route path={`/user/comments`} element={<Comments />} />
               </Routes>
             </CommunityListCtx.Provider>
           </ModalCtx.Provider>
