@@ -11,14 +11,16 @@
   z-index: 100;
 }
 .dark {
-  background: rgb(18, 18, 18);
-   color: #d8d8d8;
+  background: rgb(44, 44, 44);
+  color: #d8d8d8;
 }
 .logo {
   height: 30px;
+  cursor: pointer;
 }
 .logoText {
   height: 46px;
+  cursor: pointer;
 }
 .btnContainer {
   display: flex;

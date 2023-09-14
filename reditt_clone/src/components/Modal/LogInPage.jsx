@@ -37,9 +37,9 @@ const LogInPage = () => {
       );
       // console.log(res.data.data.name);
       if (res.data.token) {
+        sethasError(false);
         setErrMessage("Logged In Successfully");
         setTimeout(() => {
-          sethasError(false);
           setIsNotLoggedIn(false);
           setShowModal(false);
           navigate("/user/home=true");
@@ -96,11 +96,8 @@ const LogInPage = () => {
         </Link>
         ?
       </p>
-      {hasError ? (
-        <p className={styles.errorMsg}>{errMessage}!</p>
-      ) : (
-        <p className={styles.succesfullMsg}>{errMessage}</p>
-      )}
+      {hasError && <p className={styles.errorMsg}>{errMessage}!</p>}
+      {!hasError && <p className={styles.succesfullMsg}>{errMessage}</p>}
       <button className={styles.loginBtn}>Log In</button>
     </form>
   );

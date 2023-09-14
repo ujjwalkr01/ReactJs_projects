@@ -90,6 +90,11 @@ const PremiumPage = () => {
       >
         <div>
           <a
+            className={
+              toggleTheme
+                ? `${styles.github} ${styles.darkFooter}`
+                : `${styles.github}`
+            }
             href="https://github.com/ujjwalkr01/ReactJs_projects.git"
             target="_blank"
           >

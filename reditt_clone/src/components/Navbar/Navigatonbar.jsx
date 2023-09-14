@@ -14,10 +14,12 @@ import {
 } from "react-icons/bs";
 import { GrAnnounce, GrDown } from "react-icons/gr";
 import ProfileSection from "./ProfileSection";
+import { useNavigate } from "react-router-dom";
 
 const Navigatonbar = (props) => {
   const { isLoggedIn } = useContext(CheckLogInStat);
   const { toggleTheme } = useContext(ThemeTogglerCtx);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -28,8 +30,16 @@ const Navigatonbar = (props) => {
           : `${styles.parentContainer}`
       }
     >
-      <img className={styles.logo} src="/images/redditFace.svg" />
-      <img className={styles.logoText} src="/images/redditText.svg" />
+      <img
+        onClick={() => navigate("/user/home=true")}
+        className={styles.logo}
+        src="/images/redditFace.svg"
+      />
+      <img
+        onClick={() => navigate("/user/home=true")}
+        className={styles.logoText}
+        src="/images/redditText.svg"
+      />
       {isLoggedIn && (
         <div className={styles.filter}>
           <section>

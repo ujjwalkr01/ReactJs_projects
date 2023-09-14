@@ -26,7 +26,7 @@ function App() {
   if (isLoggedIn && !toggleTheme) {
     document.body.style = "background: rgb(179, 194, 206);";
   } else if (isLoggedIn && toggleTheme) {
-    document.body.style = "background: rgb(18, 18, 18); color:#d8d8d8;";
+    document.body.style = "background: rgb(44, 44, 44); color:#d8d8d8;";
   } else if (!isLoggedIn) {
     document.body.style = "background:white; color:black";
   }

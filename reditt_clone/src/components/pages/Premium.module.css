@@ -64,7 +64,7 @@
 .btns button:nth-child(1) {
   border: 1px solid white;
   background-color: transparent;
-  color: rgb(181, 5, 5);
+  color: rgb(53, 52, 52);
 }
 .btns button:nth-child(2) {
   background-color: rgb(252, 90, 31);
@@ -172,14 +172,14 @@
   gap: 25px;
   justify-content: center;
 }
-.footer div a {
+.github {
   text-decoration: none;
   color: black;
 }
 .footer div a:hover,
 .footer div p:hover {
   text-decoration: underline;
-  text-decoration-color: rgb(156, 4, 4);
+  color: rgb(175, 170, 170);
   text-decoration-thickness: 1px;
   cursor: pointer;
 }
@@ -187,11 +187,11 @@
   margin-top: 1rem;
 }
 .dark {
-  background: rgb(18, 18, 18);
+  background: rgb(29, 29, 29);
   color: #d8d8d8;
 }
 .darkFooter {
-  color: black;
+  color: rgb(151, 151, 151);
 }
 
 @media screen and (max-width: 480px) {
@@ -253,10 +253,13 @@
   }
   .btns button:nth-child(1) {
     border: none;
-    background-color: #044f89;
+    background-color: #3d7eaf;
   }
   .joinReddit h1 {
     text-align: center;
     font-size: 22px;
+  }
+  .footer{
+    margin: 0;
   }
 }
