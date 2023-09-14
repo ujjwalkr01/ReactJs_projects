@@ -1,9 +1,9 @@
 import styles from "./AfterLogInHomePage.module.css";
 import axios from "axios";
 import { ThemeTogglerCtx } from "../../App";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
-import { BsChatLeft } from "react-icons/bs";
+import { BsChatLeft, BsFillPersonFill } from "react-icons/bs";
 import { usePost } from "../../Provider/PostInfoProvider";
 import { getAuthHeaderConfig } from "../../utils/config";
 import { TfiArrowRight } from "react-icons/tfi";
@@ -20,6 +20,11 @@ const PostInfoCard = (props) => {
   const configs = getAuthHeaderConfig();
   const [openCommentSec, setOpenCommentSec] = useState(false);
   const [countComment, setCountComment] = useState(commentCount);
+  // const userName = JSON.parse(sessionStorage.getItem("userInfo"));
+  // let arr=JSON.parse(sessionStorage.getItem('like'));
+  // if(arr==null){
+  //   arr=[];
+  // }
 
   const fetchingUpvotePost = async (postId) => {
     try {
@@ -32,6 +37,7 @@ const PostInfoCard = (props) => {
 
       if (res.data.status === "success") {
         setLike((prevState) => prevState + 1);
+        // sessionStorage.setItem('like',userName);
       }
     } catch (err) {
       console.error(err);
@@ -54,6 +60,7 @@ const PostInfoCard = (props) => {
 
       if (res.data.status === "success") {
         setLike((prevState) => prevState - 1);
+        // sessionStorage.setItem('like',userName);
       }
     } catch (err) {
       console.error(err);
@@ -174,9 +181,17 @@ const PostInfoCard = (props) => {
           {openCommentSec && (
             <div className={styles.parentComSec}>
               {comments.map((ele, indx) => (
-                <div key={indx} className={styles.commentsByUser}>
+                <div
+                  key={indx}
+                  className={
+                    toggleTheme
+                      ? `${styles.commentsByUser} ${styles.darkComment}`
+                      : `${styles.commentsByUser}`
+                  }
+                >
                   <section>
                     <span>
+                      <BsFillPersonFill className={styles.userLogo} />
                       user/
                       {Math.random().toString(36).substring(2, 7).toUpperCase()}
                     </span>
@@ -185,13 +200,21 @@ const PostInfoCard = (props) => {
                       <p>{ele.createdAt.substring(11, 19)}</p>
                     </main>
                   </section>
-                  <p className={styles.commentContent}>{ele.content}</p>
+                  <p
+                    className={
+                      toggleTheme
+                        ? `${styles.commentContent} ${styles.darkCommentContent}`
+                        : `${styles.commentContent}`
+                    }
+                  >
+                    {ele.content}
+                  </p>
                 </div>
               ))}
               <div className={styles.postComment}>
                 <input
                   type="text"
-                  placeholder="What are your thoughts!"
+                  placeholder="What are your thoughts?"
                   className={styles.textComment}
                   ref={inputRef}
                   // onBlur={() => }

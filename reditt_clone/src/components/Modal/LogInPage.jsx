@@ -35,15 +35,21 @@ const LogInPage = () => {
         userInfo,
         headerconfigs
       );
-      console.log(res.data.data.name);
+      // console.log(res.data.data.name);
       if (res.data.token) {
-        sethasError(false);
-        setIsNotLoggedIn(false);
-        setShowModal(false);
-        navigate("/user/home=true");
-        sessionStorage.setItem("logInStatus", true);
-        sessionStorage.setItem("authToken", res.data.token);
-        sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
+        setErrMessage("Logged In Successfully");
+        setTimeout(() => {
+          sethasError(false);
+          setIsNotLoggedIn(false);
+          setShowModal(false);
+          navigate("/user/home=true");
+          sessionStorage.setItem("logInStatus", true);
+          sessionStorage.setItem("authToken", res.data.token);
+          sessionStorage.setItem(
+            "userInfo",
+            JSON.stringify(res.data.data.name)
+          );
+        }, 2000);
       }
     } catch (err) {
       sethasError(true);
@@ -90,7 +96,11 @@ const LogInPage = () => {
         </Link>
         ?
       </p>
-      {hasError && <p className={styles.errorMsg}>{errMessage}!</p>}
+      {hasError ? (
+        <p className={styles.errorMsg}>{errMessage}!</p>
+      ) : (
+        <p className={styles.succesfullMsg}>{errMessage}</p>
+      )}
       <button className={styles.loginBtn}>Log In</button>
     </form>
   );
