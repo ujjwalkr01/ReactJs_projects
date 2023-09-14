@@ -7,10 +7,12 @@ import { ThemeTogglerCtx } from "../../App";
 import PostInfoCard from "./PostInfoCard";
 import { PostInfoProvider } from "../../Provider/PostInfoProvider";
 import { FcVip } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const AfterLogInHomePage = () => {
   const [postDataList, setPostData] = useState([]);
   let [page, setPage] = useState(1);
+  const navigate = useNavigate();
 
   const { toggleTheme } = useContext(ThemeTogglerCtx);
 
@@ -83,7 +85,7 @@ const AfterLogInHomePage = () => {
                 <p>The best Reddit experience</p>
               </div>
             </section>
-            <button>Try Now</button>
+            <button onClick={() => navigate("/premium")}>Try Now</button>
           </div>
           <div
             className={

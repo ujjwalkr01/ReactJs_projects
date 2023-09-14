@@ -27,8 +27,11 @@ import {
   RiSteeringFill,
   RiScales3Line,
 } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 const SideBar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.parentContainer}>
       <div className={styles.firstSection}>
@@ -161,7 +164,7 @@ const SideBar = () => {
             <BsCashCoin />
             Coins
           </li>
-          <li>
+          <li onClick={() => navigate("/premium")}>
             <FcVip />
             Premium
           </li>

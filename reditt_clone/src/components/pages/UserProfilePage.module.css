@@ -69,8 +69,8 @@
   border-radius: 70%;
 }
 .dark {
-  background: rgb(70, 70, 70);
-  color: #fff;
+  background: rgb(18, 18, 18);
+  color: #d8d8d8;
 }
 
 @media screen and (max-width: 480px) {

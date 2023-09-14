@@ -273,6 +273,8 @@ input:focus {
   position: fixed;
   width: 27.2%;
   margin-bottom: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .firstSecPrem section {
   display: flex;
@@ -314,6 +316,8 @@ input:focus {
   margin-bottom: 1rem;
   top: 36%;
   height: 17rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .SecSectCreateComm div:nth-child(1) {
   background-image: url("https://www.redditinc.com/assets/images/blog/_1000x483_crop_center-center_none/hero-office-snoo_2021-08-18-235331_htmb.png");
@@ -371,6 +375,8 @@ input:focus {
   height: 6.5rem;
   font-size: 16px;
   font-weight: 500;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .thirdSec div:first-child {
   display: flex;

@@ -1,0 +1,262 @@
+.mainContainer {
+  /* border: 1px solid red; */
+  margin-top: 3.8rem;
+  background-color: #fff;
+}
+.premiumPageImg {
+  /* border: 1px solid blue; */
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/premiumHero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 520px;
+}
+.premiumPageImg section {
+  /* border: 2px solid red; */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+  top: 14%;
+  left: 4%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  /* border: 1px solid blue; */
+  width: 100%;
+}
+.logo p {
+  font-size: 50px;
+  font-weight: 700;
+  color: orangered;
+}
+.text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 3%;
+  margin-top: 1rem;
+}
+.btns {
+  display: flex;
+  gap: 4%;
+  /* border: 1px solid blue; */
+  width: 98%;
+  margin-left: 5%;
+  margin-top: 1.5rem;
+}
+.btns button {
+  width: 42%;
+  padding: 0.6rem;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btns button:nth-child(1) {
+  border: 1px solid white;
+  background-color: transparent;
+  color: rgb(181, 5, 5);
+}
+.btns button:nth-child(2) {
+  background-color: rgb(252, 90, 31);
+  border: none;
+  color: #fff;
+}
+.btns button:nth-child(1):hover {
+  background-color: #0b3658;
+}
+.btns button:nth-child(2):hover {
+  background-color: rgb(250, 107, 55);
+}
+
+.joinReddit {
+  /* border: 1px solid blue; */
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.joinReddit section {
+  /* border: 1px solid black; */
+  margin-top: 2rem;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  text-align: center;
+}
+.cards {
+  padding: 1rem;
+  width: 10rem;
+  /* border: 1px solid rgb(202, 4, 4); */
+  text-align: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 6px;
+  font-size: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.cards:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.cardsLogo1 {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/benefits-icons/premium-ad-free.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+.cardsLogo2 {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/benefits-icons/premium-avatars.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+.cardsLogo3 {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/benefits-icons/premium-lounge.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+.cardsLogo4 {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/benefits-icons/premium-app-icons.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+.cardsLogo1 {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/gold/premium-marketing/benefits-icons/premium-ad-free.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #0c3744;
+  font-family: Noto Sans, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: center;
+}
+.footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.footer div a {
+  text-decoration: none;
+  color: black;
+}
+.footer div a:hover,
+.footer div p:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(156, 4, 4);
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+.companyTag {
+  margin-top: 1rem;
+}
+.dark {
+  background: rgb(18, 18, 18);
+  color: #d8d8d8;
+}
+.darkFooter {
+  color: black;
+}
+
+@media screen and (max-width: 480px) {
+  .mainContainer {
+    margin-top: 3.2rem;
+    background-color: #fff;
+  }
+  .premiumPageImg {
+    /* border: 1px solid blue; */
+    height: 520px;
+  }
+  .premiumPageImg section {
+    /* border: 2px solid red; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    top: 10%;
+    left: 4%;
+    height: 15rem;
+    padding: 1rem 1rem;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    /* border: 1px solid blue; */
+    width: 95%;
+  }
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  .logo p {
+    font-size: 32px;
+  }
+  .text {
+    font-size: 19px;
+    font-weight: 500;
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 1rem;
+  }
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4%;
+    /* border: 1px solid blue; */
+    width: 98%;
+    margin: auto;
+    margin-top: 1.5rem;
+  }
+  .btns button {
+    width: 80%;
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+  .btns button:nth-child(1) {
+    border: none;
+    background-color: #044f89;
+  }
+  .joinReddit h1 {
+    text-align: center;
+    font-size: 22px;
+  }
+}

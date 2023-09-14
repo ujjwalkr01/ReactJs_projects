@@ -6,6 +6,7 @@ import React, { useState, createContext, useEffect } from "react";
 import LogInModal from "./components/Modal/LogInModal";
 import AfterLogInHomePage from "./components/pages/AfterLogInHomePage";
 import UserProfilePage from "./components/pages/UserProfilePage";
+import PremiumPage from "./components/pages/PremiumPage";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
@@ -20,11 +21,12 @@ function App() {
 
   const isLoggedIn = sessionStorage.getItem("logInStatus");
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
-
+  // background: rgb(18, 18, 18);
+  // color: #d8d8d8;
   if (isLoggedIn && !toggleTheme) {
     document.body.style = "background: rgb(179, 194, 206);";
   } else if (isLoggedIn && toggleTheme) {
-    document.body.style = "background: rgb(63, 63, 63); color:white;";
+    document.body.style = "background: rgb(18, 18, 18); color:#d8d8d8;";
   } else if (!isLoggedIn) {
     document.body.style = "background:white; color:black";
   }
@@ -59,6 +61,7 @@ function App() {
                   path={`/user/${userName}`}
                   element={<UserProfilePage />}
                 />
+                <Route path={`/premium`} element={<PremiumPage />} />
               </Routes>
             </CommunityListCtx.Provider>
           </ModalCtx.Provider>

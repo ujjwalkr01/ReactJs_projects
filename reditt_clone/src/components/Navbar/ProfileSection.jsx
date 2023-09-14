@@ -90,7 +90,7 @@ const ProfileSection = () => {
               <ImBullhorn />
               Advertise on Reddit
             </li>
-            <li>
+            <li onClick={() => navigate("/premium")}>
               <FcVip />
               Premium
             </li>
