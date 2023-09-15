@@ -66,8 +66,8 @@ const ProfileSection = () => {
             >
               Profile
             </li>
-            <li>Style Avatar</li>
-            <li>User Settings</li>
+            <li onClick={() => navigate("/blank")}>Style Avatar</li>
+            <li onClick={() => navigate("/blank")}>User Settings</li>
             <hr />
           </ul>
           <article className={styles.notActive}>
@@ -82,7 +82,7 @@ const ProfileSection = () => {
             <hr />
           </ul>
           <ul className={styles.thirdSection}>
-            <li>
+            <li onClick={() => navigate("/blank")}>
               <BsPeople />
               Create a Community
             </li>

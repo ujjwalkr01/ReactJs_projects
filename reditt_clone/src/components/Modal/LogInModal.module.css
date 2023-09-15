@@ -106,10 +106,12 @@
 .errorMsg {
   color: rgb(202, 5, 5);
   font-size: 14px;
+  font-weight: 600;
 }
-.succesfullMsg{
+.succesfullMsg {
   color: rgb(2, 146, 2);
   font-size: 14px;
+  font-weight: 600;
 }
 .resetSwitch {
   width: 50%;

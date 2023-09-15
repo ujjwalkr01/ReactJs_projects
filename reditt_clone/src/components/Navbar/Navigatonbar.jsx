@@ -41,7 +41,7 @@ const Navigatonbar = (props) => {
         src="/images/redditText.svg"
       />
       {isLoggedIn && (
-        <div className={styles.filter}>
+        <div className={styles.filter} onClick={() => navigate("/blank")}>
           <section>
             <BsFillHouseDoorFill /> <p>Home</p>
           </section>
@@ -60,11 +60,20 @@ const Navigatonbar = (props) => {
       )}
       {isLoggedIn && (
         <div className={styles.loginContainer}>
-          <BsArrowUpRightCircle className={styles.popular} />
-          <BsChatDots />
-          <BsBell />
-          <BsPlusLg className={styles.plusSign} />
-          <button>
+          <BsArrowUpRightCircle
+            className={styles.popular}
+            onClick={() => navigate("/blank")}
+          />
+          <BsChatDots
+            className={styles.btn}
+            onClick={() => navigate("/blank")}
+          />
+          <BsBell className={styles.btn} onClick={() => navigate("/blank")} />
+          <BsPlusLg
+            className={styles.plusSign}
+            onClick={() => navigate("/blank")}
+          />
+          <button onClick={() => navigate("/blank")}>
             <GrAnnounce />
           </button>
           <ProfileSection />

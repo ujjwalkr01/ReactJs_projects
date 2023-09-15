@@ -3,11 +3,13 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { BsBoxArrowInRight, BsHandbag } from "react-icons/bs";
 import { MdAdsClick } from "react-icons/md";
 import { ModalCtx } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const SettingModal = () => {
   const [settingModal, showSettingModal] = useState(false);
   const profileIconRef = useRef(null);
   const { setShowModal } = useContext(ModalCtx);
+  const navigate = useNavigate();
   useEffect(() => {
     const hideModal = (e) => {
       // console.log("e.target", e.target);
@@ -41,13 +43,15 @@ const SettingModal = () => {
               <BsBoxArrowInRight />
               Log In / Sign Up
             </li>
-            <li>
+            <li onClick={() => navigate("/blank")}>
               <MdAdsClick />
               Advertise on Reddit
             </li>
             <li>
               <BsHandbag />
-              Shop Collective Avatars
+              <a href="https://www.reddit.com/avatar/shop" target="_blank">
+                Shop Collective Avatars
+              </a>
             </li>
           </ul>
         </section>

@@ -41,11 +41,50 @@ const SideBar = () => {
         </p>
         <p>
           <HiMiniArrowTopRightOnSquare />
-          <a href="" target="_blank">
-            {" "}
+          <a href="https://www.reddit.com/r/popular/" target="_blank">
             Popular
           </a>
         </p>
+      </div>
+      <hr />
+      <div className={styles.thirdSection}>
+        <h4 style={{ fontWeight: "500" }}>RESOURCES</h4>
+        <ul>
+          <li>
+            <FcReddit />
+            <a href="https://www.redditinc.com/" target="_blank">
+              About Reddit
+            </a>
+          </li>
+          <li onClick={() => navigate("/blank")}>
+            <ImBullhorn />
+            Advertise
+          </li>
+          <li>
+            <TfiHelpAlt />
+            <a href="https://support.reddithelp.com/hc/en-us" target="blank">
+              Help
+            </a>
+          </li>
+          <li>
+            <TfiBook />
+            <a href="https://www.redditinc.com/blog" target="_blank">
+              Blog
+            </a>
+          </li>
+          <li>
+            <FcSupport />
+            <a href="https://www.redditinc.com/careers" target="_blank">
+              Careers
+            </a>
+          </li>
+          <li>
+            <PiMicrophoneStageThin />
+            <a href="https://www.redditinc.com/press" target="_blank">
+              Press
+            </a>
+          </li>
+        </ul>
       </div>
       <hr />
       <div className={styles.secndSection}>
@@ -75,12 +114,10 @@ const SideBar = () => {
             Crypto
           </li>
           <li>
-            <ImFilm />
-            Television
-          </li>
-          <li>
             <ImKeyboard />
-            Programming
+            <a href="https://www.reddit.com/t/programming/" target="_blank">
+              Programming
+            </a>
           </li>
           <li>
             <FiCpu /> Technology
@@ -119,44 +156,15 @@ const SideBar = () => {
           </li>
           <li>
             <SlPlane />
-            Travel
+
+            <a href="https://www.reddit.com/t/travel/" target="_blank">
+              Travel
+            </a>
           </li>
         </ul>
       </div>
       <hr />
-      <div className={styles.thirdSection}>
-        <h4 style={{ fontWeight: "500" }}>RESOURCES</h4>
-        <ul>
-          <li>
-            <FcReddit />
-            <a href="https://www.redditinc.com/" target="_blank">
-              About Reddit
-            </a>
-          </li>
-          <li>
-            <ImBullhorn />
-            Advertise
-          </li>
-          <li>
-            <TfiHelpAlt />
-            Help
-          </li>
-          <li>
-            <TfiBook />
-            Blog
-          </li>
-          <li>
-            <FcSupport />
-            <a href="https://www.redditinc.com/careers" target="_blank">
-              Careers
-            </a>
-          </li>
-          <li>
-            <PiMicrophoneStageThin />
-            Press
-          </li>
-        </ul>
-      </div>
+
       <hr />
       <div className={styles.premium}>
         <ul>

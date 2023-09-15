@@ -19,7 +19,7 @@ const LogInModal = (props) => {
   };
 
   const handleSwitchingPage = () => {
-    setSwitchLogInSignUp((prevState) => !switchLogInSignUp);
+    setSwitchLogInSignUp((prevState) => !prevState);
   };
 
   return (

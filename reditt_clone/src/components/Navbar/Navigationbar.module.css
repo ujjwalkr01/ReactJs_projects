@@ -99,6 +99,11 @@
 .loginContainer button:hover {
   background-color: #e4e3e3;
 }
+.btn,
+.popular,
+.plusSign {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 468px) {
   .logoText {

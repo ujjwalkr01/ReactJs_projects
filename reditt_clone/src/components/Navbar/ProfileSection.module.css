@@ -9,7 +9,8 @@
   justify-content: space-between;
   cursor: pointer;
 }
-.profileInfo section:first-child,.madeBy {
+.profileInfo section:first-child,
+.madeBy {
   display: flex;
   align-items: center;
   gap: 2%;
@@ -84,11 +85,9 @@
   background-color: rgb(65, 64, 64);
   color: #fff;
 }
-.toggler1 {
-  gap: 20%;
-}
+
 .toggler2 {
-  gap: 30%;
+  gap: 25%;
 }
 .notActive {
   display: flex;
@@ -116,7 +115,6 @@
   padding: 0.7rem;
   border-radius: 6px;
 }
-
 
 @media screen and (max-width: 468px) {
   .profileInfo {
@@ -148,7 +146,8 @@
   .toggler2 {
     gap: 10%;
   }
-  .notActive,.notActive p{
+  .notActive,
+  .notActive p {
     font-size: 13px;
   }
 }

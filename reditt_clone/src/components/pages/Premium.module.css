@@ -24,7 +24,7 @@
   padding: 1rem;
   position: relative;
   top: 14%;
-  left: 4%;
+  left: 8%;
 }
 .logo {
   display: flex;
@@ -64,7 +64,7 @@
 .btns button:nth-child(1) {
   border: 1px solid white;
   background-color: transparent;
-  color: rgb(53, 52, 52);
+  color: rgb(0, 0, 0);
 }
 .btns button:nth-child(2) {
   background-color: rgb(252, 90, 31);

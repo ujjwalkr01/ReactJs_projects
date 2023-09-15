@@ -107,9 +107,14 @@ const AfterLogInHomePage = () => {
               Your personal Reddit frontpage. Come here to check in with your
               favorite communities.
             </p>
-            <button className={styles.postBtn}>Create Post</button>
+            <button
+              className={styles.postBtn}
+              onClick={() => navigate("/blank")}
+            >
+              Create Post
+            </button>
             <br />
-            <button>Create Community</button>
+            <button onClick={() => navigate("/blank")}>Create Community</button>
           </div>
           <div
             className={

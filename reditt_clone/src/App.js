@@ -7,6 +7,7 @@ import LogInModal from "./components/Modal/LogInModal";
 import AfterLogInHomePage from "./components/pages/AfterLogInHomePage";
 import UserProfilePage from "./components/pages/UserProfilePage";
 import PremiumPage from "./components/pages/PremiumPage";
+import ComingSoonPage from "./components/pages/ComingSoonPage";
 
 export const ModalCtx = createContext();
 export const CheckLogInStat = createContext();
@@ -62,6 +63,7 @@ function App() {
                   element={<UserProfilePage />}
                 />
                 <Route path={`/premium`} element={<PremiumPage />} />
+                <Route path={`/blank`} element={<ComingSoonPage />} />
               </Routes>
             </CommunityListCtx.Provider>
           </ModalCtx.Provider>
